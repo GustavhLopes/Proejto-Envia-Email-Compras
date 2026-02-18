@@ -7,14 +7,71 @@
 			"name": "TOTVS Language Debug",
 			"program": "${command:AskForProgramName}",
 			"cwb": "${workspaceFolder}",
-			"smartclientBin": "../totvs/bin/smartclient/smartclient.exe",
+			"smartclientBin": "C:\\TOTVS\\ERP\\Protheus\\bin\\smartclient\\smartclient.exe",
 			"isMultiSession": true,
 			"enableTableSync": true,
 			"extendFeatures": {
 				"charDetails": false
-			}
+			},
+			"programArguments": [],
+			"enableMultiThread": false,
+			"enableProfile": false,
+			"isAccessibilityMode": false,
+			"doNotShowSplash": false,
+			"openglMode": false,
+			"dpiMode": false,
+			"olddpiMode": false,
+			"language": "",
+			"ignoreFiles": false
 		}
 	],
-	"lastProgramExecuted": "<cancel>",
+	"lastPrograms": [
+		{
+			"label": "U_WORK_DBUSEAREA"
+		},
+		{
+			"args": [],
+			"label": "U_WORK_DBUSEAREA"
+		},
+		{
+			"label": "U_WORK_ORDENACAO_E_BUSCAS"
+		},
+		{
+			"label": "U__WORK_ORDENACAOEBUSCAS"
+		},
+		{
+			"label": "U_WORK_ORDENACAOEBUSCAS1"
+		},
+		{
+			"label": "A010TOK"
+		},
+		{
+			"args": [],
+			"label": "A010TOK"
+		},
+		{
+			"label": "SIGAMDI"
+		},
+		{
+			"label": "SIGACOM"
+		},
+		{
+			"label": "SIGACFG"
+		},
+		{
+			"label": "SIGAFIN"
+		},
+		{
+			"label": "SIGAFAT"
+		},
+		{
+			"args": [],
+			"label": "TestaClasseCliente"
+		},
+		{
+			"label": "U_ARQCSV"
+		}
+	],
+	"lastProgramExecuted": "SIGACOM",
 	"lastProgramArguments": []
 }

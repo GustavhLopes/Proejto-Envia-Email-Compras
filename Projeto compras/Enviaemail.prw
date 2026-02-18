@@ -35,7 +35,7 @@ User Function EnviaEmail(cPedido)
     oMail:SetUseTLS(.T.)
     oMail:SetSMTP("smtp.office365.com", 587)
     oMail:SetUser("gustavohlopes20@hotmail.com") // email do dominio da empresa 
-    oMail:SetPass("senha") // senha do servidor
+    oMail:SetPass("G@bi1711") // senha do servidor
 
     oMail:NewMessage()
     oMail:SetFrom("email@empresa.com.br") // email do comprador
