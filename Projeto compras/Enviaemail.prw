@@ -9,22 +9,31 @@ User Function EnviaEmail(cPedido)
     Local cCorpo   := ""
 
     // Busca email do fornecedor
-    DbSelectArea("SC7")
+
+
+DbSelectArea("SC7")
+DbSetOrder(1)
+
+If DbSeek( xFilial("SC7") + PadR(cPedido, TamSX3("C7_NUM")[1]) )
+
+    DbSelectArea("SA2")
     DbSetOrder(1)
 
-    If DbSeek(xFilial("SC7") + cPedido)
-        DbSelectArea("SA2")
-        DbSetOrder(1)
+    If DbSeek( xFilial("SA2") + ;
+               SC7->C7_FORNECE + ;
+               SC7->C7_LOJA )
 
-        If DbSeek(xFilial("SA2") + SC7->C7_FORNECE + SC7->C7_LOJA)
-            cEmail := SA2->A2_EMAIL
+        If !Empty(SA2->A2_EMAIL)
+            cMail := AllTrim(SA2->A2_EMAIL)
         EndIf
-    EndIf
 
-    If Empty(cEmail)
-        MsgStop("Fornecedor sem email cadastrado.")
-        Return
     EndIf
+EndIf
+
+If Empty(cMail)
+    MsgStop("Fornecedor sem email cadastrado ou não encontrado.")
+    Return
+EndIf
 
     cCorpo := "Prezado fornecedor," + CRLF + CRLF + ;
               "Segue pedido de compra em anexo." + CRLF + ;
@@ -33,7 +42,7 @@ User Function EnviaEmail(cPedido)
 
     oMail := TMailManager():New()
     oMail:SetUseTLS(.T.)
-    oMail:SetSMTP("smtp.office365.com", 587)
+    oMail:SetSMTPserver("smtp.office365.com", 587)
     oMail:SetUser("gustavohlopes20@hotmail.com") // email do dominio da empresa 
     oMail:SetPass("G@bi1711") // senha do servidor
 
